@@ -95,7 +95,7 @@
 # elif horas >= 18 & horas > 5:
 #   print('BOA NOITE!!')
 
-# Operadore de comparação
+# Operadores de comparação
 # > -> maior
 # maior = 2 > 1
 # >= -> maior igual
