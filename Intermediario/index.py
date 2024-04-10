@@ -120,3 +120,27 @@ soma(1, 2, 3, 4, 5, 6)
 
 # Higher Order Functions 
 # Funções de primeira classe
+
+
+"""
+Exercício
+Crie funções que duplicam, triplicam e quadruplicam o número recebido como parametro
+
+def duplica(num):
+  return num * 2
+
+def triplica(num):
+  return num * 3
+
+def quadriplica(num):
+  return num * 4
+
+
+func_duplica = duplica(10)
+func_triplica = triplica(10)
+func_quadriplica = quadriplica(10)
+
+print(func_duplica, func_triplica, func_quadriplica)
+"""
+
+
