@@ -23,15 +23,24 @@
 # pessoa = dict(nome='Luiz Otávio', sobrenome='Miranda')
 
 # DICT
+"""
+Métodos úteis dis dicionario em Python
+len - quantidade de chaves
+keys = Iterável com as chaves
+values - iterável com os valores
+setdefault - Adiciona valor se chava não existe
+copy - retorna uma cópia rasa
+get - obtém uma chave
+pop - apaga um item com a chave
+popitem - Apaga o último item
+update - Atualiza um dicionário com outro
+"""
 pessoa = {
     'nome': 'Helter',
     'sobrenome': ' Xavier',
-    'idade': 25,
-    'altura': 1.7,
-    'endereços': [
-        {'rua': 'José Navarro', 'número': 235},
-        {'rua': 'outra rua', 'número': 321},
-    ]
 }
 
-print(pessoa['nome'])
+# print(len(pessoa))
+# print(pessoa.keys())
+# print(list(pessoa.values()))
+

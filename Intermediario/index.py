@@ -143,4 +143,6 @@ func_quadriplica = quadriplica(10)
 print(func_duplica, func_triplica, func_quadriplica)
 """
 
-
+"""
+Métodos úteis
+"""
