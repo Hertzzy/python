@@ -1,4 +1,5 @@
 from modelos.avaliacao import Avaliacao
+from modelos.cardapio.item_cardapio import ItemCardapio
 # O QUE É UMA CLASSE?
 # Abstração do mundo real
 # Qualquer restaurante que for criar deve ter esses atributos:
@@ -18,7 +19,9 @@ class Restaurante:
     self._categoria = categoria.upper()
     # ativo é um atributo privado
     self._ativo = False
+
     self._avaliacao = []
+    self._cardapio = []
     # Adicionando restaurante à LIST restaurante
     Restaurante.restaurantes.append(self)
 
@@ -28,7 +31,7 @@ class Restaurante:
 
   @classmethod
   def listar_restaurantes(cls):
-    print(f'{'Nome do restaurante'.ljust(25)} |{'Categoria'.ljust(25)} | {'Avaliacao'.ljust(25)} | {'Status'}')
+    print(f'{"Nome do restaurante".ljust(25)} | {"Categoria".ljust(25)} | {"Avaliação".ljust(25)} | {"Status"}')
 
     for restaurante in cls.restaurantes:
       print(f'{restaurante._nome.ljust(25)} | {restaurante._categoria.ljust(25)} | {str(restaurante.media_avalicoes).ljust(25)} | {restaurante.ativo}')
@@ -59,3 +62,26 @@ class Restaurante:
     quantidade_de_notas = len(self._avaliacao)
     media = round(soma_das_notas / quantidade_de_notas, 1)
     return media
+
+  
+  def add_no_cardapio(self, item):
+    # Verifica se o item está dentro do cardápio
+    if isinstance(item, ItemCardapio):
+      self._cardapio.append(item)
+  
+  @property
+  def exibir_cardapio(self):
+    print(f'Cardapio do restaurante {self._nome}\n')
+
+    for i, item in enumerate(self._cardapio, start=1):
+      # SE TIVER O ATRIBUTO
+      # Se o atributo for descrição -> É UM PRATO
+      # SE NÃO -> É UMA BEBIDA
+      if hasattr(item, 'descricao'):
+        mensagem_prato = f'{i}. Nome: {item} | Preco: R${item._preco} | Descricao: {item.descricao}'
+        print(mensagem_prato)
+      else:
+        mensagem_bebida = f'{i}. Nome: {item} | Preco: R${item._preco} | Tamanho: {item.tamanho}'
+        print(mensagem_bebida)
+
+      

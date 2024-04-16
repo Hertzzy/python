@@ -1,15 +1,23 @@
-from  modelos.restaurante import Restaurante
+from modelos.restaurante import Restaurante
+from modelos.cardapio.bebida import Bebida
+from modelos.cardapio.prato import Prato
 
-# restaurante_praca = Restaurante('Praça', 'Gourmet')
-# restaurante_mexicana = Restaurante('Mexican Food', 'Mexicana')
-restaurante_japones = Restaurante('Japa', 'Japonesa')
-restaurante_japones.receber_avaliacao('Guilherme', 10)
-restaurante_japones.receber_avaliacao('Lais', 8)
+# CRIAR RESTAURANTE
+restaurante_praca = Restaurante('Praca', 'Gourmet')
+# CRIAR BEBIDA
+bebida_suco = Bebida('Suco de Melancia', 5.00, 'Grande')
+# Aplicar desconto
+bebida_suco.aplicar_desconto()
+# CRIAR PRATO
+prato_paozinho = Prato('Paozinho', 2.00, 'O melhor pão da cidade')
+prato_paozinho.aplicar_desconto()
 
-# restaurante_japones.alterar_estado()
+# ADIONANDO ITEMS NO CARDAPIO
+restaurante_praca.add_no_cardapio(bebida_suco)
+restaurante_praca.add_no_cardapio(prato_paozinho)
 
 def main():
-  Restaurante.listar_restaurantes()
+  restaurante_praca.exibir_cardapio
 
 if __name__ == '__main__':
   main()
